@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Boost</title>
+    <script src="js/common.js"></script>
+</head>
+<style>
+pdf{
+    display: block;
+    background: rgba(255, 255, 0, 0.31);
+    width: 720px;
+    height: 1024px;
+}
+main{
+    position: absolute;
+    width: 878px;
+    height: 613px;
+    background: url("images/demo-bg.png") no-repeat;
+    background-size: cover;
+
+    /*旋转*/
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    margin-left: -82px;
+    margin-top: 204px;
+}
+.info{
+    /*background: rgba(255, 255, 0, 0.22);*/
+    margin-top: 253px;
+    margin-left: 152px;
+    height: 136px;
+}
+.info input{
+    /*background: rgba(255, 0, 0, 0.34);*/
+    height: 20px;
+    border: none;
+    font-weight: bold;
+    background: none;
+    border: none;
+}
+.info #name {
+    height: 60px;
+    font-size: 50px;
+    text-align: center;
+}
+.info #skill {
+    margin-top: 16px;
+    margin-left: 277px;
+    width: 308px;
+}
+.info #from {
+    margin-top: 5px;
+    width: 255px;
+    margin-left: 47px;
+}
+.info #at {
+    width: 255px;
+    margin-left: 29px;
+}
+</style>
+<body>
+<pdf>
+    <main>
+        <div class="info">
+            <input id="name" value="name">
+            <br>
+            <input id="skill" value="skill">
+            <br>
+            <input id="from" value="from">
+            <input id="at" value="at">
+        </div>
+    </main>
+</pdf>
+</body>
+</html>
