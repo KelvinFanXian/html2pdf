@@ -4,6 +4,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
+ * wkhtmltopdf.exe download:
+ *  https://wkhtmltopdf.org/downloads.html
  * @author Kelvin范显
  * @createDate 2018年12月13日
  */
