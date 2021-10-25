@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
  * @createDate 2018年12月13日
  */
 public abstract class Generator<T> {
-    public static final String host = "http://localhost:8080";
+    public static final String host = "http://127.0.0.1:8080";
 
     final Html2PDF html2PDF = new Html2PDF();
     protected final RestTemplate restTemplate;

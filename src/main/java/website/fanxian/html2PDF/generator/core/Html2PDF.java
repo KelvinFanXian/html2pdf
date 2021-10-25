@@ -3,9 +3,7 @@ package website.fanxian.html2PDF.generator.core;
 import org.apache.http.util.Asserts;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
@@ -44,12 +42,12 @@ public class Html2PDF {
                 waitForProcessBeforeContinueCurrentThread(pdfProcess);
                 requireSuccessfulExitStatus(pdfProcess);
             }catch (Exception ex) {
-                throw new RuntimeException(msg_pdfGenFailed);
+                throw new RuntimeException(ex);
             }finally {
                 pdfProcess.destroy();
             }
         }catch (IOException ex) {
-            throw new RuntimeException(msg_pdfGenFailed);
+            throw new RuntimeException(ex);
         }
     }
 
@@ -63,7 +61,17 @@ public class Html2PDF {
 
     private void requireSuccessfulExitStatus(Process process) {
         if (process.exitValue() != 0) {
-            throw new RuntimeException(msg_pdfGenFailed);
+            BufferedReader bufferedReader =new BufferedReader(new InputStreamReader(process.getErrorStream()));
+            StringBuilder sb = new StringBuilder();
+            try {
+                String s;
+                while ((s=bufferedReader.readLine())!=null) {
+                    sb.append(s+"\n");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            throw new RuntimeException(sb.toString());
         }
     }
 }

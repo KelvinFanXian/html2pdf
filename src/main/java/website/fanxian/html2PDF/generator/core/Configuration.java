@@ -10,10 +10,13 @@ import java.nio.file.Paths;
  * @createDate 2018年12月13日
  */
 public class Configuration {
-    static final String which_wkhtmltopdf = "D:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe";
+//    static final String which_wkhtmltopdf = "D:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe";
+    static final String which_wkhtmltopdf = "/usr/local/bin/wkhtmltopdf";
 
-    final static String targetDir = "E:\\temp\\pdfGen";
-    final static String zipDir = "E:\\temp\\zipGen";
+//    final static String targetDir = "E:\\temp\\pdfGen";
+//    final static String zipDir = "E:\\temp\\zipGen";
+    final static String targetDir = "/Users/xianfan/temp/pdfGen";
+    final static String zipDir = "/Users/xianfan/temp/zipGen";
     final static Path logPath = Paths.get(targetDir, "noScore.log");
 
 }
